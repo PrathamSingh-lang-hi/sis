@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For My Beautiful Sister 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ff8fab, #ffc2d1, #bde0fe, #cdb4db);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 20%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.35), transparent 18%),
+        radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25), transparent 20%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+section {
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.main-card {
+    width: min(1000px, 100%);
+    padding: 55px 35px;
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 25px 80px rgba(87, 24, 69, 0.25);
+    backdrop-filter: blur(18px);
+    animation: popIn 1.2s ease, floatCard 5s ease-in-out infinite;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    animation: pulse 2.5s infinite;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.8),
+        0 0 35px rgba(255,111,145,0.8);
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    max-width: 850px;
+    margin: 0 auto 30px;
+    color: #fff7fb;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 15px 34px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.primary {
+    background: white;
+    color: #ff4f81;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.35);
+}
+
+.secondary {
+    background: rgba(255,255,255,0.18);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.btn:hover {
+    transform: translateY(-6px) scale(1.05);
+}
+
+.wave {
+    font-size: 2rem;
+    margin-top: 25px;
+    animation: bounce 1.5s infinite;
+}
+
+.content-section {
+    padding: 70px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 40px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.55);
+}
+
+.cards {
+    width: min(1100px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-card {
+    padding: 30px;
+    min-height: 220px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 18px 50px rgba(91, 24, 69, 0.18);
+    transition: 0.35s ease;
+    transform-style: preserve-3d;
+}
+
+.info-card:hover {
+    transform: translateY(-12px) rotateX(5deg) rotateY(-5deg);
+    background: rgba(255,255,255,0.28);
+}
+
+.icon {
+    font-size: 2.8rem;
+    margin-bottom: 18px;
+}
+
+.info-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: #fff7fb;
+    line-height: 1.7;
+}
+
+.letter-box {
+    width: min(900px, 100%);
+    margin: auto;
+    padding: 45px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.45);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 70px rgba(91, 24, 69, 0.2);
+    line-height: 2;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.highlight {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 18px;
+}
+
+.timeline {
+    width: min(900px, 100%);
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: rgba(255,255,255,0.5);
+    transform: translateX(-50%);
+    border-radius: 50px;
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-card {
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.45);
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
+
+.timeline-card:hover {
+    transform: scale(1.05);
+}
+
+.surprise {
+    text-align: center;
+    padding-bottom: 90px;
+}
+
+.surprise-box {
+    width: min(800px, 100%);
+    margin: 30px auto 0;
+    padding: 35px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.45);
+    backdrop-filter: blur(14px);
+    display: none;
+    animation: popIn 0.8s ease;
+    font-size: 1.25rem;
+    line-height: 1.9;
+}
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp linear forwards;
+}
+
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 999;
+    animation: sparkleAnim 1.4s linear forwards;
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateY(45px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 15px rgba(255,255,255,0.7),
+            0 0 25px rgba(255,111,145,0.5);
+    }
+    to {
+        text-shadow:
+            0 0 25px rgba(255,255,255,1),
+            0 0 55px rgba(255,111,145,0.9),
+            0 0 90px rgba(255,255,255,0.6);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(110vh) rotate(0deg) scale(0.7);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-120px) rotate(360deg) scale(1.3);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleAnim {
+    from {
+        opacity: 1;
+        transform: scale(0) rotate(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-45px) scale(1.7) rotate(180deg);
+    }
+}
+
+@keyframes confettiFall {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 850px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main-card {
+        padding: 40px 24px;
+    }
+
+    .letter-box {
+        padding: 30px 22px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 50px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="main-card">
+        <div class="badge">Made with love for the best sister ever 💕</div>
+
+        <h1>My Beautiful Sister 😘</h1>
+
+        <p class="subtitle">
+            Some people make life brighter just by existing.  
+            You are one of those rare, beautiful souls who brings happiness,
+            warmth, laughter and love wherever you go. 💖
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#reasons" class="btn primary">Why You're Amazing ✨</a>
+            <a href="#letter" class="btn secondary">Read My Letter 💌</a>
+        </div>
+
+        <div class="wave">⌄</div>
+    </div>
+</section>
+
+<section class="content-section" id="reasons">
+    <h2 class="section-title">Reasons You Are Amazing 🌸</h2>
+
+    <div class="cards">
+        <div class="info-card">
+            <div class="icon">💖</div>
+            <h3>Beautiful Heart</h3>
+            <p>
+                Your kindness is one of your most beautiful qualities.
+                You make people feel loved, valued and safe.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">✨</div>
+            <h3>Bright Energy</h3>
+            <p>
+                Your smile, your laugh and your presence can turn even ordinary days
+                into something special.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🌷</div>
+            <h3>Strong Soul</h3>
+            <p>
+                You are stronger than you know. You keep going, keep growing,
+                and keep becoming better.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">😂</div>
+            <h3>Funny Vibes</h3>
+            <p>
+                Life is never boring with you. Your humor, drama and little chaos
+                make everything memorable.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">👑</div>
+            <h3>Queen Energy</h3>
+            <p>
+                You carry yourself with a charm that is completely your own.
+                Confident, sweet and unforgettable.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">😘</div>
+            <h3>Forever Special</h3>
+            <p>
+                No matter how much time passes, you will always be one of the most
+                important people in my life.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="content-section" id="letter">
+    <h2 class="section-title">A Little Letter For You 💌</h2>
+
+    <div class="letter-box">
+        <span class="highlight">Dear Sister,</span>
+
+        You are not just my sister, you are a blessing in my life.  
+        You are beautiful in the way you smile, in the way you care,
+        in the way you laugh, and in the way you make people feel special. 😘
+        <br><br>
+        I may not say it every day, but I am truly proud of you.
+        Proud of the person you are, proud of the strength you carry,
+        and proud of the happiness you bring into our lives. 💖
+        <br><br>
+        Keep shining, keep smiling, keep being your crazy, sweet,
+        beautiful self. The world is lucky to have you, and I am luckier
+        to call you my sister. 💋
+    </div>
+</section>
+
+<section class="content-section">
+    <h2 class="section-title">Our Forever Bond 🌈</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <h3>Childhood Memories 📸</h3>
+                <p>The silly fights, the laughs, the small moments — all priceless.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <h3>Always Together 🤝</h3>
+                <p>Even when life changes, this bond stays strong forever.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <h3>Proud Always 🌟</h3>
+                <p>I will always cheer for you and celebrate every little win of yours.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-card">
+                <h3>Best Sister Ever 👑</h3>
+                <p>You are rare, special, beautiful, and absolutely irreplaceable.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="surprise">
+    <h2 class="section-title">One Last Surprise 🎁</h2>
+
+    <button class="btn primary" onclick="showSurprise()">
+        Click Me 😘
+    </button>
+
+    <div class="surprise-box" id="surpriseBox">
+        You are loved more than words can explain.  
+        You are beautiful, precious, strong, funny, adorable and truly one of a kind.  
+        Never forget that you are someone’s biggest blessing. 💖😘💋
+    </div>
+</section>
+
+<script>
+const emojis = ["😘","💋","💕","💖","🌸","✨","🥰","❤️","🌷","👑"];
+
+function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("floating");
+    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.fontSize = (18 + Math.random() * 30) + "px";
+    emoji.style.animationDuration = (6 + Math.random() * 7) + "s";
+
+    document.body.appendChild(emoji);
+
+    setTimeout(() => {
+        emoji.remove();
+    }, 13000);
+}
+
+setInterval(createEmoji, 450);
+
+document.addEventListener("mousemove", function(e) {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.innerHTML = "✨";
+
+    sparkle.style.left = e.pageX + "px";
+    sparkle.style.top = e.pageY + "px";
+    sparkle.style.fontSize = (12 + Math.random() * 14) + "px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+        sparkle.remove();
+    }, 1400);
+});
+
+function showSurprise() {
+    const box = document.getElementById("surpriseBox");
+    box.style.display = "block";
+
+    for (let i = 0; i < 80; i++) {
+        createConfetti();
+    }
+}
+
+function createConfetti() {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+
+    const shapes = ["💖","💕","✨","🌸","😘","💋","👑"];
+    confetti.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.fontSize = (16 + Math.random() * 18) + "px";
+    confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+        confetti.remove();
+    }, 5000);
+}
+</script>
+
+</body>
+</html>
